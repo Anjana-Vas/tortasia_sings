@@ -1,0 +1,38 @@
+import time
+import board
+import digitalio
+
+taylor = digitalio.DigitalInOut(board.D1)
+taylor.switch_to_output()
+moto = digitalio.DigitalInOut(board.D0)
+moto.switch_to_output()
+bad = digitalio.DigitalInOut(board.D10)
+bad.switch_to_output()
+hips = digitalio.DigitalInOut(board.D9)
+hips.switch_to_output()
+
+
+while True:
+    taylor.value = True
+    time.sleep(5.00)
+
+    taylor.value = False
+    time.sleep(0.25)
+
+    moto.value = True
+    time.sleep(5.00)
+
+    moto.value = False
+    time.sleep(0.25)
+
+    bad.value = True
+    time.sleep(5.00)
+
+    bad.value = False
+    time.sleep(0.25)
+
+    hips.value = True
+    time.sleep(5.00)
+
+    hips.value = False
+    time.sleep(0.25)
